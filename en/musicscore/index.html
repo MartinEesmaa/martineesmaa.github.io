@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VISQOL Test Results</title>
+    <style>
+        body {
+            background-color: lightyellow;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>VISQOL testing for points</h1>
+    <h2>Before I start to test, I need a lossless audio file, AC3 programs (aften and liba52) and VISQOL</h2>
+    <h4>Used Sintel (2009, Blender movie) trailer, Aften 0.0.8 (encoder) and liba52 0.7.4 (decoder).</h4>
+<h4>Download:</h4>
+    <a href="../../muusikapunkt/sintel_trailer-audio.flac">Audio file [FLAC]</a>
+    <a href="../../muusikapunkt/aften.7z">Aften</a>
+    <a href="../../muusikapunkt/a52dec.7z">liba52 brought with a52dec</a>
+    <a href="../../muusikapunkt/visqol.7z">VISQOL</a>
+    <a href="../../muusikapunkt/visqolanalyze.bat">Visqol Analyze batch script (Windows)</a>
+    <a href="../../muusikapunkt/sinteltrailer_visqoljson.7z">VISQOL JSON reports</a>
+<h4>Commands used:</h4>
+<p></p>
+<b>aften -b 128 -w 60 sintel_trailer-audio.wav sintel_trailer-audio.ac3</b>
+<p></p>
+<b>a52dec -o wav sintel_trailer-audio.ac3 > degraded.wav</b>
+<p></p>
+<b>visqol --reference_file sintel_trailer-audio.wav --degraded_file degraded.wav</b>
+<p></p>
+<b>ffmpeg -i sintel_trailer-audio.flac -c:a ac3 -b:a 128k -cutoff 24000 sintel_trailer-audio.ac3</b>
+<p></p>
+    <h2>Here is my bitrates result:</h2>
+
+    <table>
+        <tr>
+            <th>Configuration</th>
+            <th>Score</th>
+        </tr>
+        <tr>
+            <td>AC3 Aften a52dec at 48k bitrate:</td>
+            <td>2.56108</td>
+        </tr>
+        <tr>
+            <td>AC3 Aften a52dec at 56k bitrate:</td>
+            <td>2.57111</td>
+        </tr>
+        <tr>
+            <td>AC3 Aften a52dec at 64k bitrate:</td>
+            <td>2.57181</td>
+        </tr>
+        <tr>
+            <td>AC3 Aften a52dec at 96k bitrate:</td>
+            <td>3.13997</td>
+        </tr>
+        <tr>
+            <td>AC3 Aften a52dec at 128k bitrate:</td>
+            <td>3.7347</td>
+        </tr>
+        <tr>
+            <td>AC3 Aften a52dec at 160k bitrate:</td>
+            <td>4.22424</td>
+        </tr>
+        <tr>
+            <td>AC3 Aften a52dec at 192k bitrate:</td>
+            <td>4.55896</td>
+        </tr>
+        <tr>
+            <td>AC3 Aften a52dec at 224k bitrate:</td>
+            <td>4.63923</td>
+        </tr>
+        <tr>
+            <td>AC3 Aften a52dec at 256k bitrate:</td>
+            <td>4.70219</td>
+        </tr>
+        <tr>
+            <td>AC3 Aften a52dec at 320k bitrate:</td>
+            <td>4.70742</td>
+        </tr>
+        <tr>
+            <td>AC3 Aften a52dec bandwidth full at 48k bitrate:</td>
+            <td>4.13462</td>
+        </tr>
+        <tr>
+            <td>AC3 Aften a52dec bandwidth full at 56k bitrate:</td>
+            <td>4.35159</td>
+        </tr>
+        <tr>
+            <td>AC3 Aften a52dec bandwidth full at 64k bitrate:</td>
+            <td>4.52296</td>
+        </tr>
+        <tr>
+            <td>AC3 Aften a52dec bandwidth full at 96k bitrate:</td>
+            <td>4.60706</td>
+        </tr>
+        <tr>
+            <td>AC3 Aften a52dec bandwidth full at 128k bitrate:</td>
+            <td>4.65011</td>
+        </tr>
+        <tr>
+            <td>AC3 Aften a52dec bandwidth full at 160k bitrate:</td>
+            <td>4.67134</td>
+        </tr>
+        <tr>
+            <td>AC3 Aften a52dec bandwidth full at 192k bitrate:</td>
+            <td>4.68766</td>
+        </tr>
+        <tr>
+            <td>AC3 Aften a52dec bandwidth full at 224k bitrate:</td>
+            <td>4.6964</td>
+        </tr>
+        <tr>
+            <td>AC3 Aften a52dec bandwidth full at 256k bitrate:</td>
+            <td>4.70105</td>
+        </tr>
+        <tr>
+            <td>AC3 Aften a52dec bandwidth full at 320k bitrate:</td>
+            <td>4.70742</td>
+        </tr>
+    </table>
+
+    <h3>AC3 Aften ffmpeg</h3>
+    <table>
+        <tr>
+            <th>Configuration</th>
+            <th>Score</th>
+        </tr>
+        <tr>
+            <td>AC3 Aften ffmpeg at 48k bitrate:</td>
+            <td>2.56034</td>
+        </tr>
+        <tr>
+            <td>AC3 Aften ffmpeg at 56k bitrate:</td>
+            <td>2.57061</td>
+        </tr>
+        <tr>
+            <td>AC3 Aften ffmpeg at 64k bitrate:</td>
+            <td>2.57779</td>
+        </tr>
+        <tr>
+            <td>AC3 Aften ffmpeg at 96k bitrate:</td>
+            <td>3.13917</td>
+        </tr>
+        <tr>
+            <td>AC3 Aften ffmpeg at 128k bitrate:</td>
+            <td>3.73451</td>
+        </tr>
+        <tr>
+            <td>AC3 Aften ffmpeg at 160k bitrate:</td>
+            <td>4.22366</td>
+        </tr>
+        <tr>
+            <td>AC3 Aften ffmpeg at 192k bitrate:</td>
+            <td>4.56058</td>
+        </tr>
+        <tr>
+            <td>AC3 Aften ffmpeg at 224k bitrate:</td>
+            <td>4.6397</td>
+        </tr>
+        <tr>
+            <td>AC3 Aften ffmpeg at 256k bitrate:</td>
+            <td>4.70215</td>
+        </tr>
+        <tr>
+            <td>AC3 Aften ffmpeg at 320k bitrate:</td>
+            <td>4.70763</td>
+        </tr>
+        <tr>
+            <td>AC3 Aften ffmpeg bandwidth full at 48k bitrate:</td>
+            <td>4.13502</td>
+        </tr>
+        <tr>
+            <td>AC3 Aften ffmpeg bandwidth full at 56k bitrate:</td>
+            <td>4.35262</td>
+        </tr>
+        <tr>
+            <td>AC3 Aften ffmpeg bandwidth full at 64k bitrate:</td>
+            <td>4.5265</td>
+        </tr>
+        <tr>
+            <td>AC3 Aften ffmpeg bandwidth full at 96k bitrate:</td>
+            <td>4.60582</td>
+        </tr>
+        <tr>
+            <td>AC3 Aften ffmpeg bandwidth full at 128k bitrate:</td>
+            <td>4.64828</td>
+        </tr>
+        <tr>
+            <td>AC3 Aften ffmpeg bandwidth full at 160k bitrate:</td>
+            <td>4.67035</td>
+        </tr>
+        <tr>
+            <td>AC3 Aften ffmpeg bandwidth full at 192k bitrate:</td>
+            <td>4.68603</td>
+        </tr>
+        <tr>
+            <td>AC3 Aften ffmpeg bandwidth full at 224k bitrate:</td>
+            <td>4.69461</td>
+        </tr>
+        <tr>
+            <td>AC3 Aften ffmpeg bandwidth full at 256k bitrate:</td>
+            <td>4.7007</td>
+        </tr>
+        <tr>
+            <td>AC3 Aften ffmpeg bandwidth full at 320k bitrate:</td>
+            <td>4.70763</td>
+        </tr>
+    </table>
+
+    <h3>AC3 ffmpeg a52dec</h3>
+    <table>
+        <tr>
+            <th>Configuration</th>
+            <th>Score</th>
+        </tr>
+        <tr>
+            <td>AC3 ffmpeg a52dec at 48k bitrate:</td>
+            <td>2.53638</td>
+        </tr>
+        <tr>
+            <td>AC3 ffmpeg a52dec at 56k bitrate:</td>
+            <td>2.5627</td>
+        </tr>
+        <tr>
+            <td>AC3 ffmpeg a52dec at 64k bitrate:</td>
+            <td>2.57669</td>
+        </tr>
+        <tr>
+            <td>AC3 ffmpeg a52dec at 96k bitrate:</td>
+            <td>2.58985</td>
+        </tr>
+        <tr>
+            <td>AC3 ffmpeg a52dec at 128k bitrate:</td>
+            <td>4.01696</td>
+        </tr>
+        <tr>
+            <td>AC3 ffmpeg a52dec at 160k bitrate:</td>
+            <td>4.29775</td>
+        </tr>
+        <tr>
+            <td>AC3 ffmpeg a52dec at 192k bitrate:</td>
+            <td>4.57516</td>
+        </tr>
+        <tr>
+            <td>AC3 ffmpeg a52dec at 224k bitrate:</td>
+            <td>4.61933</td>
+        </tr>
+        <tr>
+            <td>AC3 ffmpeg a52dec at 256k bitrate:</td>
+            <td>4.63197</td>
+        </tr>
+        <tr>
+            <td>AC3 ffmpeg a52dec at 320k bitrate:</td>
+            <td>4.64159</td>
+        </tr>
+        <tr>
+            <td>AC3 ffmpeg a52dec bandwidth full at 48k bitrate:</td>
+            <td>2.49312</td>
+        </tr>
+        <tr>
+            <td>AC3 ffmpeg a52dec bandwidth full at 56k bitrate:</td>
+            <td>2.51531</td>
+        </tr>
+        <tr>
+            <td>AC3 ffmpeg a52dec bandwidth full at 64k bitrate:</td>
+            <td>4.04899</td>
+        </tr>
+        <tr>
+            <td>AC3 ffmpeg a52dec bandwidth full at 96k bitrate:</td>
+            <td>4.51639</td>
+        </tr>
+        <tr>
+            <td>AC3 ffmpeg a52dec bandwidth full at 128k bitrate:</td>
+            <td>4.53981</td>
+        </tr>
+        <tr>
+            <td>AC3 ffmpeg a52dec bandwidth full at 160k bitrate:</td>
+            <td>4.59083</td>
+        </tr>
+        <tr>
+            <td>AC3 ffmpeg a52dec bandwidth full at 192k bitrate:</td>
+            <td>4.62472</td>
+        </tr>
+        <tr>
+            <td>AC3 ffmpeg a52dec bandwidth full at 224k bitrate:</td>
+            <td>4.67316</td>
+        </tr>
+        <tr>
+            <td>AC3 ffmpeg a52dec bandwidth full at 256k bitrate:</td>
+            <td>4.6835</td>
+        </tr>
+        <tr>
+            <td>AC3 ffmpeg a52dec bandwidth full at 320k bitrate:</td>
+            <td>4.69633</td>
+        </tr>
+    </table>
+
+    <h3>AC3 ffmpeg ffmpeg</h3>
+    <table>
+        <tr>
+            <th>Configuration</th>
+            <th>Score</th>
+        </tr>
+        <tr>
+            <td>AC3 ffmpeg ffmpeg at 48k bitrate:</td>
+            <td>2.5619</td>
+        </tr>
+        <tr>
+            <td>AC3 ffmpeg ffmpeg at 56k bitrate:</td>
+            <td>2.5791</td>
+        </tr>
+        <tr>
+            <td>AC3 ffmpeg ffmpeg at 64k bitrate:</td>
+            <td>2.58114</td>
+        </tr>
+        <tr>
+            <td>AC3 ffmpeg ffmpeg at 96k bitrate:</td>
+            <td>2.59034</td>
+        </tr>
+        <tr>
+            <td>AC3 ffmpeg ffmpeg at 128k bitrate:</td>
+            <td>4.01397</td>
+        </tr>
+        <tr>
+            <td>AC3 ffmpeg ffmpeg at 160k bitrate:</td>
+            <td>4.29872</td>
+        </tr>
+        <tr>
+            <td>AC3 ffmpeg ffmpeg at 192k bitrate:</td>
+            <td>4.57685</td>
+        </tr>
+        <tr>
+            <td>AC3 ffmpeg ffmpeg at 224k bitrate:</td>
+            <td>4.63411</td>
+        </tr>
+        <tr>
+            <td>AC3 ffmpeg ffmpeg at 256k bitrate:</td>
+            <td>4.64552</td>
+        </tr>
+        <tr>
+            <td>AC3 ffmpeg ffmpeg at 320k bitrate:</td>
+            <td>4.64218</td>
+        </tr>
+        <tr>
+            <td>AC3 ffmpeg ffmpeg bandwidth full at 48k bitrate:</td>
+            <td>2.53304</td>
+        </tr>
+        <tr>
+            <td>AC3 ffmpeg ffmpeg bandwidth full at 56k bitrate:</td>
+            <td>2.45732</td>
+        </tr>
+        <tr>
+            <td>AC3 ffmpeg ffmpeg bandwidth full at 64k bitrate:</td>
+            <td>3.69092</td>
+        </tr>
+        <tr>
+            <td>AC3 ffmpeg ffmpeg bandwidth full at 96k bitrate:</td>
+            <td>4.44037</td>
+        </tr>
+        <tr>
+            <td>AC3 ffmpeg ffmpeg bandwidth full at 128k bitrate:</td>
+            <td>4.48363</td>
+        </tr>
+        <tr>
+            <td>AC3 ffmpeg ffmpeg bandwidth full at 160k bitrate:</td>
+            <td>4.56249</td>
+        </tr>
+        <tr>
+            <td>AC3 ffmpeg ffmpeg bandwidth full at 192k bitrate:</td>
+            <td>4.57275</td>
+        </tr>
+        <tr>
+            <td>AC3 ffmpeg ffmpeg bandwidth full at 224k bitrate:</td>
+            <td>4.64674</td>
+        </tr>
+        <tr>
+            <td>AC3 ffmpeg ffmpeg bandwidth full at 256k bitrate:</td>
+            <td>4.67044</td>
+        </tr>
+        <tr>
+            <td>AC3 ffmpeg ffmpeg bandwidth full at 320k bitrate:</td>
+            <td>4.69487</td>
+        </tr>
+    </table>
+</body>
+</html>

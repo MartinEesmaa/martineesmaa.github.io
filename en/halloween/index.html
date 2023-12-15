@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+<body style="background-color: lightyellow;">
+    <a href="../../">Go Back</a>
+    <h1>Halloween day</h1>
+    <img src="HalloweeniMaski.jpg" width="400" height="300" />
+    <h4>It is Halloween day on 31 October 2023.</h4>
+    <h4>Here's what I wear in the photo:</h4>
+    <h4>Witch hat</h4>
+    <h4>Halloween shirt</h4>
+    <h4>I wish everyone a happy Halloween day. Trick or treat!</h4>
+    <h4>- Martin Eesmaa</h4>
+    <br>
+    <h2>Welcome to the Trick or Treat Game!</h2>
+    <p>Click the button below to get your treat or trick.</p>
+    <button onclick="trickOrTreat()">Click me!</button>
+    <p id="result"></p>
+    <img src="" width="200" height="200" id="candyImage">
+    <audio id="audio" src="maagia.wav"></audio>
+
+    <script>
+        function trickOrTreat() {
+            var randomNumber = Math.random();
+            var candyImage = document.getElementById("candyImage");
+            if (randomNumber < 0.5) {
+                document.getElementById("result").innerHTML = "You got a Treat!";
+                candyImage.src = "treat.png";
+                audio.src = "maagia.wav";
+            } else {
+                document.getElementById("result").innerHTML = "You got a Trick!";
+                candyImage.src = "trick.png";
+                audio.src = "maagia.wav";
+            }
+            audio.play();
+        }
+    </script>
+</body>
+</html>

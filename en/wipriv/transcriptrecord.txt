@@ -1,0 +1,33 @@
+TRANSCRIPT:
+
+Hello! My name is Martin Eesmaa.
+
+I will outline three key principles from the Australian Privacy Principles (APPs).
+
+The first are APP 6, APP 12, and APP 13. Let's start with my research on three key points.
+
+Number 6: Use or disclosure of personal information.
+Personal information is used to store personal data on a server by collecting information such as usernames, passwords, emails, phone numbers, and other details, which are required by law in some countries.
+
+Disclosing personal information can be done at the request of law enforcement, such as through warrants, or with the permission of third parties or the user.
+Any disclosure of personal information to others without permission could result in fines and/or a jail sentence.
+However, law enforcement can obtain warrants when a judge signs them, and it may be beneficial to contact the customer to receive a copy of the warrant.
+
+
+Number 12: Access to personal information
+
+Individuals have the right to access their personal information, including their name, address, and password.
+All websites that display passwords do not show the actual password result, and credit card numbers are also redacted for security reasons.
+
+
+Number 13: Correction of personal information
+
+Correcting personal information can be done manually at any time by the individual account holder to update their details.
+If they need assistance, they can contact our support team.
+
+Some businesses do not allow employees, for example, to change their full name. To change your full name, you must contact support and provide a certificate of name change for security purposes.
+
+So that is all three of my principles. If you have any questions or feedback, please don't hesitate to contact me. Thank you for listening to my tunes!
+
+Kind regards,
+Martin Eesmaa

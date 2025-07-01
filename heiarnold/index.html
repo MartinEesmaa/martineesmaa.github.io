@@ -72,7 +72,14 @@
         const platformData = {
             tumblr: {
                 icon: '<i class="fa-brands fa-tumblr"></i>',
-                url: username => `https://${username}.tumblr.com/`
+                url: username => `https://${username}.tumblr.com/`,
+                search: username => {
+                    // Special case for welovebirdmom-blog
+                    if (username === "welovebirdmom-blog") {
+                        return `https://shortakiweek.tumblr.com/search/welovebirdmom`;
+                    }
+                    return `https://shortakiweek.tumblr.com/search/${username}`;
+                }
             },
             instagram: {
                 icon: '<i class="fa-brands fa-instagram"></i>',
@@ -103,9 +110,7 @@
         };
 
         // Collect all usernames and their platforms for cross-platform modal
-        const userProfiles = {
-            // username: [platforms...]
-        };
+        const userProfiles = {};
         document.querySelectorAll('.user-block').forEach(el => {
             const username = el.dataset.username;
             const platform = el.dataset.platform;
@@ -129,6 +134,7 @@
                 platforms.forEach(platform => {
                     const data = platformData[platform];
                     if (data) {
+                        // Main profile link
                         const a = document.createElement('a');
                         a.href = data.url(username);
                         a.innerHTML = data.icon;
@@ -136,6 +142,17 @@
                         a.target = "_blank";
                         a.rel = "noopener";
                         modalIcons.appendChild(a);
+
+                        // Tumblr search link (for tumblr only)
+                        if (platform === "tumblr" && data.search) {
+                            const searchA = document.createElement('a');
+                            searchA.href = data.search(username);
+                            searchA.innerHTML = '<i class="fa-solid fa-hashtag"></i>';
+                            searchA.title = "Search on shortakiweek Tumblr";
+                            searchA.target = "_blank";
+                            searchA.rel = "noopener";
+                            modalIcons.appendChild(searchA);
+                        }
                     }
                 });
                 modalBg.classList.add('active');

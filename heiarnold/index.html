@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hey Arnold! Shortaki Week 2025 Profiles</title>
+    <link rel="stylesheet" href="heiarnold/css/style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <h1>Hey Arnold! Shortaki Week 2025 Profiles</h1>
+    <div class="platform-list">
+        <h2>Tumblr</h2>
+        <div>
+            <span class="user-block" data-username="adio0515" data-platform="tumblr">adio0515</span>
+            <span class="user-block" data-username="martineesmaa" data-platform="tumblr">martineesmaa</span>
+            <span class="user-block" data-username="farkledagain" data-platform="tumblr">farkledagain</span>
+            <span class="user-block" data-username="m0nyartz" data-platform="tumblr">m0nyartz</span>
+            <span class="user-block" data-username="pinkbowbluehatgoldlocket" data-platform="tumblr">pinkbowbluehatgoldlocket</span>
+            <span class="user-block" data-username="hellengomes" data-platform="tumblr">hellengomes</span>
+            <span class="user-block" data-username="possumart18" data-platform="tumblr">possumart18</span>
+            <span class="user-block" data-username="welovebirdmom-blog" data-platform="tumblr">welovebirdmom-blog</span>
+            <span class="user-block" data-username="metalheadrailfan" data-platform="tumblr">metalheadrailfan</span>
+            <span class="user-block" data-username="jenneyquinn" data-platform="tumblr">jenneyquinn</span>
+        </div>
+        <h2>Instagram</h2>
+        <div>
+            <span class="user-block" data-username="martinhero12" data-platform="instagram">martinhero12</span>
+            <span class="user-block" data-username="welovebirdmom" data-platform="instagram">welovebirdmom</span>
+            <span class="user-block" data-username="metalheadrailfan" data-platform="instagram">metalheadrailfan</span>
+            <span class="user-block" data-username="gabbygase" data-platform="instagram">gabbygase</span>
+            <span class="user-block" data-username="meliimamiii" data-platform="instagram">meliimamiii</span>
+            <span class="user-block" data-username="farkledagain" data-platform="instagram">farkledagain</span>
+        </div>
+        <h2>Twitter/X</h2>
+        <div>
+            <span class="user-block" data-username="martin123459" data-platform="twitter">martin123459</span>
+            <span class="user-block" data-username="adiao_y3_green" data-platform="twitter">adiao_y3_green</span>
+            <span class="user-block" data-username="GabbyUlhoa" data-platform="twitter">GabbyUlhoa</span>
+            <span class="user-block" data-username="LlenGomes" data-platform="twitter">LlenGomes</span>
+            <span class="user-block" data-username="welovebirdmom" data-platform="twitter">welovebirdmom</span>
+        </div>
+        <h2>BlueSky</h2>
+        <div>
+            <span class="user-block" data-username="martineesmaa.org" data-platform="bluesky">martineesmaa.org</span>
+            <span class="user-block" data-username="leskuh" data-platform="bluesky">leskuh</span>
+            <span class="user-block" data-username="monyartz" data-platform="bluesky">monyartz</span>
+            <span class="user-block" data-username="metalheadrailfan" data-platform="bluesky">metalheadrailfan</span>
+            <span class="user-block" data-username="gabbydorigam" data-platform="bluesky">gabbydorigam</span>
+        </div>
+        <h2>DeviantArt</h2>
+        <div>
+            <span class="user-block" data-username="PinMartin892" data-platform="deviantart">PinMartin892</span>
+        </div>
+        <h2>Threads.net</h2>
+        <div>
+            <span class="user-block" data-username="martinhero12" data-platform="threads">martinhero12</span>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal-bg" id="modal-bg">
+        <div class="modal" id="modal">
+            <button class="close-btn" id="close-btn" title="Close">&times;</button>
+            <div class="username" id="modal-username"></div>
+            <div class="icons" id="modal-icons"></div>
+        </div>
+    </div>
+    <script>
+        // Platform icon and URL map
+        const platformData = {
+            tumblr: {
+                icon: '<i class="fa-brands fa-tumblr"></i>',
+                url: username => `https://${username}.tumblr.com/`
+            },
+            instagram: {
+                icon: '<i class="fa-brands fa-instagram"></i>',
+                url: username => `https://instagram.com/${username}`
+            },
+            twitter: {
+                icon: '<i class="fa-brands fa-x-twitter"></i>',
+                url: username => `https://twitter.com/${username}`
+            },
+            bluesky: {
+                icon: '<i class="fa-solid fa-cloud"></i>',
+                url: username => `https://bsky.app/profile/${username}`
+            },
+            deviantart: {
+                icon: '<i class="fa-brands fa-deviantart"></i>',
+                url: username => `https://deviantart.com/${username}`
+            },
+            threads: {
+                icon: '<i class="fa-brands fa-threads"></i>',
+                url: username => `https://www.threads.net/@${username}`
+            }
+        };
+
+        // Collect all usernames and their platforms for cross-platform modal
+        const userProfiles = {
+            // username: [platforms...]
+        };
+        document.querySelectorAll('.user-block').forEach(el => {
+            const username = el.dataset.username;
+            const platform = el.dataset.platform;
+            if (!userProfiles[username]) userProfiles[username] = [];
+            if (!userProfiles[username].includes(platform)) userProfiles[username].push(platform);
+        });
+
+        // Modal logic
+        const modalBg = document.getElementById('modal-bg');
+        const modalUsername = document.getElementById('modal-username');
+        const modalIcons = document.getElementById('modal-icons');
+        const closeBtn = document.getElementById('close-btn');
+
+        document.querySelectorAll('.user-block').forEach(el => {
+            el.addEventListener('click', () => {
+                const username = el.dataset.username;
+                modalUsername.textContent = username;
+                // Find all platforms for this username
+                const platforms = userProfiles[username];
+                modalIcons.innerHTML = '';
+                platforms.forEach(platform => {
+                    const data = platformData[platform];
+                    if (data) {
+                        const a = document.createElement('a');
+                        a.href = data.url(username);
+                        a.innerHTML = data.icon;
+                        a.title = platform.charAt(0).toUpperCase() + platform.slice(1);
+                        a.target = "_blank";
+                        a.rel = "noopener";
+                        modalIcons.appendChild(a);
+                    }
+                });
+                modalBg.classList.add('active');
+            });
+        });
+
+        closeBtn.onclick = () => modalBg.classList.remove('active');
+        modalBg.onclick = e => {
+            if (e.target === modalBg) modalBg.classList.remove('active');
+        };
+    </script>
+</body>
+</html>

@@ -82,7 +82,13 @@
             },
             bluesky: {
                 icon: '<i class="fa-solid fa-cloud"></i>',
-                url: username => `https://bsky.app/profile/${username}`
+                url: username => {
+                    if (username === "martineesmaa.org") {
+                        return `https://bsky.app/profile/martineesmaa.org`;
+                    } else {
+                        return `https://bsky.app/profile/${username}.bsky.social`;
+                    }
+                }
             },
             deviantart: {
                 icon: '<i class="fa-brands fa-deviantart"></i>',

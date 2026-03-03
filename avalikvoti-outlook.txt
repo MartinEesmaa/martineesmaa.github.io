@@ -1,0 +1,19 @@
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+Comment: Kasutaja ID:	Martin Eesmaa <martin.eesmaa@outlook.com>
+Comment: Valid from:	05.06.2024 09:17
+Comment: Tüüp:	255-bitine EdDSA (salajane võti saadaval)
+Comment: Kasutus:	Allkirjastamine, Krüptimine, Kasutaja ID sertifitseerimine
+Comment: Sõrmejälg:	9987C0BD18847744CD38CE69FA90FCA352CC984D
+
+
+mDMEZmADChYJKwYBBAHaRw8BAQdAyPJSjY1Ut/P2KRP+o8XLmyR2RMPH+V9GKKDG
+5Twy9o20KU1hcnRpbiBFZXNtYWEgPG1hcnRpbi5lZXNtYWFAb3V0bG9vay5jb20+
+iJMEExYKADsWIQSZh8C9GIR3RM04zmn6kPyjUsyYTQUCZmADCgIbAwULCQgHAgIi
+AgYVCgkICwIEFgIDAQIeBwIXgAAKCRD6kPyjUsyYTbqMAQCGEjgJ9mtaZKbc9uf3
+rzekySTs55O+gVyv0NQgMiWhtwEAhY/LrRBwbbBdh7CQ1tJknV8sIUv6mr+FaXKO
+XcyotAa4OARmYAMKEgorBgEEAZdVAQUBAQdAYuOtkMDMluGIGhnAM/e67dE3x6Ut
+bRHx9lbj35TseTwDAQgHiHgEGBYKACAWIQSZh8C9GIR3RM04zmn6kPyjUsyYTQUC
+ZmADCgIbDAAKCRD6kPyjUsyYTbojAQD8zArMdEDur0NpfIm4ScHRtrgcogBzvqZ/
+5BxpvIEqtgEA5yUnx4DWBf3m9ik8m6J+hdnrNKBmLB2HJuhc+E9mewo=
+=/v7g
+-----END PGP PUBLIC KEY BLOCK-----

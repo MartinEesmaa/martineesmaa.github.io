@@ -5,7 +5,7 @@
     <title>Hey Arnold! Shortaki Week 2025 Profiles</title>
     <link rel="stylesheet" href="/heiarnold/css/style.css">
     <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="/fontawesome/all.min.css">
 </head>
 <body>
     <h1>Hey Arnold! Shortaki Week 2025 Profiles</h1>
@@ -18,11 +18,10 @@
             <span class="user-block" data-username="shortakiweek" data-platform="tumblr">Tumblr</span>
             <span class="user-block" data-username="shortakiweek" data-platform="instagram">Instagram</span>
             <span class="user-block" data-username="shortakiweek" data-platform="twitter">Twitter</span>
-            <span class="user-block" data-username="shortakiweek" data-platform="redditc">Reddit (unofficial)</span>
+            <span class="user-block" data-username="shortakiweek" data-platform="reddit">Reddit (unofficial)</span>
         </div>
         <h2>Tumblr</h2>
         <div>
-            <span class="user-block" data-username="adio0515" data-platform="tumblr">adio0515</span>
             <span class="user-block" data-username="martineesmaa" data-platform="tumblr">martineesmaa</span>
             <span class="user-block" data-username="farkledagain" data-platform="tumblr">farkledagain</span>
             <span class="user-block" data-username="m0nyartz" data-platform="tumblr">m0nyartz</span>
@@ -33,13 +32,12 @@
             <span class="user-block" data-username="metalheadrailfan" data-platform="tumblr">metalheadrailfan</span>
             <span class="user-block" data-username="jenneyquinn" data-platform="tumblr">jenneyquinn</span>
         </div>
-        <h2>Instagram</h2>
+        <h2>Instagram & some Threads</h2>
         <div>
             <span class="user-block" data-username="martinhero12" data-platform="instagram">martinhero12</span>
             <span class="user-block" data-username="welovebirdmom" data-platform="instagram">welovebirdmom</span>
             <span class="user-block" data-username="metalheadrailfan" data-platform="instagram">metalheadrailfan</span>
             <span class="user-block" data-username="gabbygase" data-platform="instagram">gabbygase</span>
-            <span class="user-block" data-username="meliimamiii" data-platform="instagram">meliimamiii</span>
             <span class="user-block" data-username="farkledagain" data-platform="instagram">farkledagain</span>
             <span class="user-block" data-username="Hellendrawzxj9" data-platform="instagram">hellengomes (Maria Hellen)</span>
         </div>
@@ -49,8 +47,6 @@
             <span class="user-block" data-username="adiao_y3_green" data-platform="twitter">adiao_y3_green</span>
             <span class="user-block" data-username="GabbyUlhoa" data-platform="twitter">GabbyUlhoa</span>
             <span class="user-block" data-username="LlenGomes" data-platform="twitter">LlenGomes</span>
-            <span class="user-block" data-username="welovebirdmom" data-platform="twitter">welovebirdmom</span>
-            <span class="user-block" data-username="farkledagain" data-platform="twitter">FarkledAgain</span>
         </div>
         <h2>BlueSky</h2>
         <div>
@@ -65,9 +61,6 @@
         <h2>Reddit</h2>
         <div>
             <span class="user-block" data-username="martineesmaa" data-platform="reddit">martineesmaa</span>
-            <span class="user-block" data-username="welovebirdmom" data-platform="reddit">welovebirdmom</span>
-            <span class="user-block" data-username="Able-Carob" data-platform="reddit">Hellengomes (Able-Carob)</span>
-            <span class="user-block" data-username="metalheadrailfan" data-platform="reddit">metalheadrailfan</span>
         </div>
         <h2>TikTok</h2>
         <div>
@@ -77,11 +70,13 @@
         <h2>DeviantArt</h2>
         <div>
             <span class="user-block" data-username="PinMartin892" data-platform="deviantart">PinMartin892</span>
-            <span class="user-block" data-username="welovebirdmom" data-platform="deviantart">welovebirdmom</span>
         </div>
-        <h2>Threads.com</h2>
+        <h2>Deleted/privated accounts</h2>
         <div>
-            <span class="user-block" data-username="martinhero12" data-platform="threads">martinhero12</span>
+            <span class="user-block">adio0515 (Tumblr)</span>
+            <span class="user-block">meliimamiii (Instagram)</span>
+            <span class="user-block">welovebirdmom (Twitter)</span>
+            <span class="user-block">FarkledAgain (Twitter)</span>
         </div>
     </div>
     <!-- Modal -->
@@ -115,7 +110,7 @@
                 url: username => `https://twitter.com/${username}`
             },
             bluesky: {
-                icon: '<i class="fa-solid fa-cloud"></i>',
+                icon: '<i class="fa-brands fa-bluesky"></i>',
                 url: username => {
                     if (username === "martineesmaa.org") {
                         return `https://bsky.app/profile/martineesmaa.org`;
@@ -128,17 +123,15 @@
                 icon: '<i class="fa-brands fa-deviantart"></i>',
                 url: username => `https://deviantart.com/${username}`
             },
-            threads: {
-                icon: '<i class="fa-brands fa-threads"></i>',
-                url: username => `https://www.threads.net/@${username}`
-            },
-            redditc: {
-                icon: '<i class="fa-brands fa-reddit"></i>',
-                url: username => `https://reddit.com/r/${username}`
-            },
             reddit: {
                 icon: '<i class="fa-brands fa-reddit"></i>',
-                url: username => `https://reddit.com/u/${username}`
+                url: username => {
+                    if (username === "shortakiweek") {
+                        return `https://reddit.com/r/shortakiweek`
+                    } else {
+                        return `https://reddit.com/u/${username}`
+                    }
+                }
             },
             tiktok: {
                 icon: '<i class="fa-brands fa-tiktok"></i>',

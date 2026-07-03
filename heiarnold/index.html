@@ -18,7 +18,7 @@
             <span class="user-block" data-username="shortakiweek" data-platform="tumblr">Tumblr</span>
             <span class="user-block" data-username="shortakiweek" data-platform="instagram">Instagram</span>
             <span class="user-block" data-username="shortakiweek" data-platform="twitter">Twitter</span>
-            <span class="user-block" data-username="shortakiweek" data-platform="reddit">Reddit (unofficial)</span>
+            <span class="user-block" data-username="shortakiweek" data-platform="reddit">Reddit (UNOFFICIAL)</span>
         </div>
         <h2>Tumblr</h2>
         <div>
@@ -28,7 +28,7 @@
             <span class="user-block" data-username="pinkbowbluehatgoldlocket" data-platform="tumblr">pinkbowbluehatgoldlocket</span>
             <span class="user-block" data-username="hellengomes" data-platform="tumblr">hellengomes</span>
             <span class="user-block" data-username="possumart18" data-platform="tumblr">possumart18</span>
-            <span class="user-block" data-username="welovebirdmom-blog" data-platform="tumblr">welovebirdmom-blog</span>
+            <span class="user-block" data-username="welovebirdmom" data-platform="tumblr">welovebirdmom</span>
             <span class="user-block" data-username="metalheadrailfan" data-platform="tumblr">metalheadrailfan</span>
             <span class="user-block" data-username="jenneyquinn" data-platform="tumblr">jenneyquinn</span>
         </div>
@@ -94,11 +94,7 @@
                 icon: '<i class="fa-brands fa-tumblr"></i>',
                 url: username => `https://${username}.tumblr.com/`,
                 search: username => {
-                    // Special case for welovebirdmom-blog
-                    if (username === "welovebirdmom-blog") {
-                        return `https://shortakiweek.tumblr.com/search/welovebirdmom`;
-                    }
-                    return `https://shortakiweek.tumblr.com/search/${username}`;
+                    return `https://shortakiweek.tumblr.com/search/%232025+%23${username}`;
                 }
             },
             instagram: {
